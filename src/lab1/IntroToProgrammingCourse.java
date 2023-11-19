@@ -3,27 +3,19 @@ package lab1;
 import javax.swing.*;
 
 /**
- * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
- * change this fact.
+ * Describe responsibilities here.
  *
- * @author your name goes here
+ * @author Alex Tindall
  * @version 1.00
  */
-public class IntroToProgrammingCourse {
+public class IntroToProgrammingCourse extends SoftwareCourse {
 
-    String courseNumber;
-    private String courseName;
-    private double credits;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
-        this.setCourseName(courseName);
-        this.setCourseNumber(courseNumber);
+        super(courseName, courseNumber);
     }
 
-    public String getCourseName() {
-        return courseName;
-    }
-
+    @Override
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
@@ -32,11 +24,7 @@ public class IntroToProgrammingCourse {
         }
         this.courseName = courseName;
     }
-
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
+    @Override
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() == 0) {
             JOptionPane.showMessageDialog(null,
@@ -45,11 +33,7 @@ public class IntroToProgrammingCourse {
         }
         this.courseNumber = courseNumber;
     }
-
-    public double getCredits() {
-        return credits;
-    }
-
+    @Override
     public void setCredits(double credits) {
         if (credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
@@ -58,5 +42,16 @@ public class IntroToProgrammingCourse {
         }
         this.credits = credits;
     }
+    @Override
+    public String toString() {
+        return "AdvancedJavaCourse{" +
+                "prerequisites='" + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", courseNumber='" + courseNumber + '\'' +
+                ", credits=" + credits +
+                '}';
+    }
+
+
 
 }

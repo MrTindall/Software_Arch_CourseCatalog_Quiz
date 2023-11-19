@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author your name goes here
  * @version 1.00
  */
-public class AdvancedJavaCourse {
+public class AdvancedJavaCourse implements SoftwareCourse {
 
     private String courseName;
     private String courseNumber;
@@ -72,4 +72,13 @@ public class AdvancedJavaCourse {
         this.prerequisites = prerequisites;
     }
 
+    @Override
+    public String toString() {
+        return "AdvancedJavaCourse{" +
+                "courseName='" + courseName + '\'' +
+                ", courseNumber='" + courseNumber + '\'' +
+                ", credits=" + credits +
+                ", prerequisites='" + prerequisites + '\'' +
+                '}';
+    }
 }

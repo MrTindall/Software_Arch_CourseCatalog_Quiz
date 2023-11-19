@@ -3,33 +3,27 @@ package lab1;
 /**
  * Describe responsibilities here.
  *
- * @author your name goes here
+ * @author Alex Tindall
  * @version 1.00
  */
-public class IntroJavaCourse {
+public class IntroJavaCourse extends SoftwareCourse {
 
-    String courseName;
-    double credits;
     String prerequisites;
-    private String courseNumber;
 
     public IntroJavaCourse(String courseName, String courseNumber) {
+        super(courseName, courseNumber);
+    }
+
+    @Override
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
-        this.courseNumber = courseNumber;
     }
-
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
+    @Override
     public void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
     }
 
-    public double getCredits() {
-        return credits;
-    }
-
+    @Override
     public void setCredits(double credits) {
         if (credits < 0 || credits > 5.0) {
             System.out.println(
@@ -38,13 +32,19 @@ public class IntroJavaCourse {
         }
         this.setCredits(credits);
     }
-
-    public String getPrerequisites() {
-        return prerequisites;
-    }
-
+    public String getPrerequisites() { return prerequisites; }
     public void setPrerequisites(String prerequisites) {
         this.prerequisites = prerequisites;
+    }
+
+    @Override
+    public String toString() {
+        return "AdvancedJavaCourse{" +
+                "prerequisites='" + prerequisites + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", courseNumber='" + courseNumber + '\'' +
+                ", credits=" + credits +
+                '}';
     }
 
 }
